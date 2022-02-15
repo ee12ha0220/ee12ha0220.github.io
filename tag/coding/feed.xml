@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<feed xmlns="http://www.w3.org/2005/Atom" >
+  <generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator>
+  <link href="http://localhost:4000/tag/coding/feed.xml" rel="self" type="application/atom+xml" />
+  <link href="http://localhost:4000/" rel="alternate" type="text/html" />
+  <updated>2022-02-15T13:27:16+09:00</updated>
+  <id>http://localhost:4000/tag/coding/feed.xml</id>
+
+  
+  
+  
+
+  
+    <title type="html">Saha’s Blog | </title>
+  
+
+  
+
+  
+
+  
+    
+      
+    
+  
+
+  
+  
+
+  
+    <entry>
+      <title type="html">코딩용 함수들 정리</title>
+      <link href="http://localhost:4000/fn" rel="alternate" type="text/html" title="코딩용 함수들 정리" />
+      <published>2022-02-10T00:00:00+09:00</published>
+      <updated>2022-02-10T00:00:00+09:00</updated>
+      <id>http://localhost:4000/fn</id>
+      <content type="html" xml:base="http://localhost:4000/fn">&lt;h1 id=&quot;python&quot;&gt;Python&lt;/h1&gt;
+
+&lt;h3 id=&quot;args&quot;&gt;*args&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;복수의 인자들을 받고 싶을 때 사용&lt;/li&gt;
+  &lt;li&gt;tuple 형태로 전달됨&lt;/li&gt;
+  &lt;li&gt;
+    &lt;script src=&quot;https://gist.github.com/ee12ha0220/ab5bcac57254c1827ce512aae83b13df.js&quot;&gt;&lt;/script&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;kwargs&quot;&gt;**kwargs&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;복수의 인자들을 받고 싶을 때 사용&lt;/li&gt;
+  &lt;li&gt;dictionary 형태로 전달됨&lt;/li&gt;
+  &lt;li&gt;
+    &lt;script src=&quot;https://gist.github.com/ee12ha0220/691cd0a12c78421b2330889405546092.js&quot;&gt;&lt;/script&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;pytorch&quot;&gt;Pytorch&lt;/h1&gt;
+
+&lt;h3 id=&quot;a&quot;&gt;a[…]&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;앞에 있는 것들(혹은 뒤에 있는 것들) 전부 무시&lt;/li&gt;
+  &lt;li&gt;ex : a[…, 1] -&amp;gt; 마지막 차원의 [1] 위치에 해당하는 tensor&lt;/li&gt;
+&lt;/ul&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>saha</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="coding" />
+      
+
+      
+        <summary type="html">Python</summary>
+      
+
+      
+      
+    </entry>
+  
+</feed>

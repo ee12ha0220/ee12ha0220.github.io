@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title> - Articles</title>
+    <description></description>
+    <link>
+    http://localhost:4000</link>
+    
+      
+      <item>
+        <title>코딩용 함수들 정리</title>
+        
+          <description>&lt;h1 id=&quot;python&quot;&gt;Python&lt;/h1&gt;
+
+</description>
+        
+        <pubDate>Thu, 10 Feb 2022 00:00:00 +0900</pubDate>
+        <link>
+        http://localhost:4000/fn</link>
+        <guid isPermaLink="true">http://localhost:4000/fn</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Moving in a 360 World : Synthesizing Panoramic Parallaxes from a Single Panorama(OmniNeRF)</title>
+        
+          <description>&lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;Synthesizing novel views provides immersive 3D experiences, but the needed cost of computing power is very high in both time and capacity.&lt;/li&gt;
+  &lt;li&gt;While many techniques are proposed to synthesize novel views by taking the perspective image(s) as the input, prior work rarely considers the panorama image as a single source for modeling and rendering.
+    &lt;ul&gt;
+      &lt;li&gt;Perspective images can be obtained easily. But to construct the whole scene, very dense samples are required.&lt;/li&gt;
+      &lt;li&gt;Panorama images have more data of a scene in a single image, so using less images will be achievable.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;In this paper, they propose OmniNeRF, which uses a single panorama image with depth value to synthesize a novel view of the whole scene.&lt;/li&gt;
+  &lt;li&gt;Also in reconstruction, training with merely a single image is apparently not sufficient. So they proposed a method to create images form different views from a single image.&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        
+        <pubDate>Fri, 21 Jan 2022 14:33:26 +0900</pubDate>
+        <link>
+        http://localhost:4000/OmniNeRF</link>
+        <guid isPermaLink="true">http://localhost:4000/OmniNeRF</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Unsupervised Discovery of Object Radiance Fields</title>
+        
+          <description>&lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;Object-centric representation is a constant topic of interest in computer vision and machine learning.&lt;/li&gt;
+  &lt;li&gt;Such representation should bear three characteristics:
+    &lt;ul&gt;
+      &lt;li&gt;Should be learned in a unsupervised manner.&lt;/li&gt;
+      &lt;li&gt;Should explain the image formation process.&lt;/li&gt;
+      &lt;li&gt;Should be 3D-aware, capturing geometric and physical object properties.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Until now, there is no work satisfying all these characteristics.&lt;/li&gt;
+  &lt;li&gt;In this paper, they propose Object Radiance fields(uORF), which infers a set of object-centric latent codes through a slot-based encoder, and use them to represent a 3D scene as a composition of radiance fields.&lt;/li&gt;
+  &lt;li&gt;During training, such radiance fields are neurally rendered in multiple views, with reconstruction losses in pixel space as supervision.&lt;/li&gt;
+  &lt;li&gt;During testing, uORF infers the set of object radiance fields from an single image.&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        
+        <pubDate>Tue, 18 Jan 2022 15:56:00 +0900</pubDate>
+        <link>
+        http://localhost:4000/uORF</link>
+        <guid isPermaLink="true">http://localhost:4000/uORF</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Object-Centric Learning with Slot Attention</title>
+        
+          <description>&lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;Object-centric representations have the potential to improve sample efficiency and generalization of machine learning algorithms across a range of application domains.&lt;/li&gt;
+  &lt;li&gt;However, obtaining object-centric representations from raw perceptual input, such as an image or a video, is challenging and often requires either supervision or task-specific architectures.&lt;/li&gt;
+  &lt;li&gt;To overcome this challenge, this paper introduce the Slot Attention module, a differentiable interface between perceptual representations (e.g., the output of a CNN) and a set of variables called slots.&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        
+        <pubDate>Mon, 17 Jan 2022 10:50:00 +0900</pubDate>
+        <link>
+        http://localhost:4000/OCLSA</link>
+        <guid isPermaLink="true">http://localhost:4000/OCLSA</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>깃헙 블로그에 코드 넣기</title>
+        
+          <description>&lt;h1 id=&quot;code-block-사용&quot;&gt;Code block 사용&lt;/h1&gt;
+&lt;p&gt;깃허브 블로그에 코드를 넣을 때 code block이라는 것을 활용할 수 있다.&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    ```py
+    def sum(a, b):
+        return a+b
+    ```
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;이런 식으로 입력을 하면 실제로 아래와 같은 모습으로 변환된다.&lt;/p&gt;
+&lt;div class=&quot;language-py highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;여러가지 문법을 지원하고, 바로 입력을 할 수 있다는 장점이 있지만 나는 뭔가 가독성이 떨어져서 이를 사용하지 않는다. 특히 현재 사용하는 jekyll2 테마는 엔터의 간격이 엄청 크기 때문에, 어딘가 어색하게 느껴진다.&lt;/p&gt;
+&lt;h1 id=&quot;github-gist-사용&quot;&gt;Github Gist 사용&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;https://gist.github.com&quot;&gt;Github Gist&lt;/a&gt;는 Github과 다르게 원하는 code snippet만 업로드 할 수 있다. 업로드를 완료하면 링크를 복사할 수 있는데, 이를 그대로 붙여넣으면 code block을 아래와 같이 삽입할 수 있다. 
+&lt;script src=&quot;https://gist.github.com/ee12ha0220/cc54fd72c29671fe767d6c8206a2a312.js&quot;&gt;&lt;/script&gt;
+나는 이 방법이 위보다 마음에 들어서 사용하고 있지만, 각자 사용하는 테마와 취향에 맞게 사용하면 될 것 같다.&lt;/p&gt;
+</description>
+        
+        <pubDate>Sat, 15 Jan 2022 16:00:00 +0900</pubDate>
+        <link>
+        http://localhost:4000/post1</link>
+        <guid isPermaLink="true">http://localhost:4000/post1</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>NeRF−−: Neural Radiance Fields Without Known Camera Parameters</title>
+        
+          <description>&lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;NeRF without know camera poses and intrinsics.&lt;/li&gt;
+  &lt;li&gt;Camera parameters can be automatically discoverd via joint optimization during training the NeRF model.&lt;/li&gt;
+  &lt;li&gt;Compare performance with SFM colmap.&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        
+        <pubDate>Tue, 21 Dec 2021 14:30:00 +0900</pubDate>
+        <link>
+        http://localhost:4000/NeRFmm</link>
+        <guid isPermaLink="true">http://localhost:4000/NeRFmm</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis</title>
+        
+          <description>&lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;/h1&gt;
+&lt;h3 id=&quot;novel-view-synthesis&quot;&gt;Novel view synthesis&lt;/h3&gt;
+
+</description>
+        
+        <pubDate>Fri, 19 Nov 2021 16:02:26 +0900</pubDate>
+        <link>
+        http://localhost:4000/NeRF</link>
+        <guid isPermaLink="true">http://localhost:4000/NeRF</guid>
+      </item>
+      
+    
+  </channel>
+</rss>
