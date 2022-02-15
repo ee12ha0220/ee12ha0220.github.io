@@ -2,10 +2,10 @@
 
 <feed xmlns="http://www.w3.org/2005/Atom" >
   <generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator>
-  <link href="http://localhost:4000/tag/github-blog/feed.xml" rel="self" type="application/atom+xml" />
+  <link href="http://localhost:4000/tag/blog/feed.xml" rel="self" type="application/atom+xml" />
   <link href="http://localhost:4000/" rel="alternate" type="text/html" />
-  <updated>2022-02-15T13:19:47+09:00</updated>
-  <id>http://localhost:4000/tag/github-blog/feed.xml</id>
+  <updated>2022-02-15T13:22:33+09:00</updated>
+  <id>http://localhost:4000/tag/blog/feed.xml</id>
 
   
   
@@ -67,7 +67,7 @@
       
 
       
-        <category term="Github-blog" />
+        <category term="blog" />
       
 
       
