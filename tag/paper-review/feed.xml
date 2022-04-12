@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator>
   <link href="http://localhost:4000/tag/paper-review/feed.xml" rel="self" type="application/atom+xml" />
   <link href="http://localhost:4000/" rel="alternate" type="text/html" />
-  <updated>2022-02-15T13:27:16+09:00</updated>
+  <updated>2022-04-12T16:44:51+09:00</updated>
   <id>http://localhost:4000/tag/paper-review/feed.xml</id>
 
   
@@ -28,6 +28,212 @@
   
   
 
+  
+    <entry>
+      <title type="html">Interactive Monte Carlo Denoising using Affinity of Neural Features</title>
+      <link href="http://localhost:4000/AffinityMC" rel="alternate" type="text/html" title="Interactive Monte Carlo Denoising using Affinity of Neural Features" />
+      <published>2022-04-07T00:00:00+09:00</published>
+      <updated>2022-04-07T00:00:00+09:00</updated>
+      <id>http://localhost:4000/AffinityMC</id>
+      <content type="html" xml:base="http://localhost:4000/AffinityMC">&lt;h1 id=&quot;introduction&quot;&gt;introduction&lt;/h1&gt;
+
+&lt;h3 id=&quot;limitations-of-previous-work&quot;&gt;Limitations of previous work&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;State of art MC denoisers use &lt;strong&gt;large kernel-predicting neural networks&lt;/strong&gt; (Bako et al. 2017, Gharbi et al. 2019, Kettunen et al. 2019, Vogels et al. 2018, Xu et al. 2019), which have &lt;strong&gt;large computational cost&lt;/strong&gt; for interactive applications.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Faster denoisers&lt;/strong&gt; using hand-designed filters(Mara et al. 2017), or a compact neural network(Chaitanya et al. 2017, Meng et al. 2020) &lt;strong&gt;sacrifices quality for performance&lt;/strong&gt;.&lt;/li&gt;
+  &lt;li&gt;Interactive denoisers have trouble in maintaining &lt;strong&gt;temporal stability&lt;/strong&gt; in certain scenes like soft shadows, complex global illumination, glossy reflections, refractive materials and etc..
+    &lt;ul&gt;
+      &lt;li&gt;Denoising artifacts are often amplified in video animation(flickering), therefore temporal-stability is important.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;objective-of-this-paper&quot;&gt;Objective of this paper&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;In this paper, they propose a new denoiser for low-sample, interactive ray-tracing applications that directly operates on the path-traced samples.
+    &lt;ul&gt;
+      &lt;li&gt;A light-weight neural network that summarizes &lt;strong&gt;high-dimensional per-sample information&lt;/strong&gt; into &lt;strong&gt;low-dimensional per-pixel feature vectors&lt;/strong&gt;.&lt;/li&gt;
+      &lt;li&gt;A novel &lt;strong&gt;pairwise affinity&lt;/strong&gt; over these features, which is used to &lt;strong&gt;weight the contributions of neighboring per-pixel radiance values&lt;/strong&gt; in a local weighted average filtering step.&lt;/li&gt;
+      &lt;li&gt;A new temporal aggregation mechanism which uses pairwise affinity to improve temporal stability.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;denoising-with-learned-pairwise-affinity&quot;&gt;Denoising with learned pairwise affinity&lt;/h1&gt;
+
+&lt;h3 id=&quot;overall-pipeline&quot;&gt;Overall pipeline&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/AffinityMC_1.png&quot; width=&quot;100%&quot; height=&quot;100%&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;input-path-traced-sample-features&quot;&gt;Input path-traced sample features&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Working with samples&lt;/strong&gt; shows &lt;strong&gt;improved denoising&lt;/strong&gt; compared to using pixels, but has a &lt;strong&gt;computational overhead&lt;/strong&gt;.
+    &lt;ul&gt;
+      &lt;li&gt;In this paper, they addressed this problem by using &lt;strong&gt;per-sample information in computing weights&lt;/strong&gt;, but the filters &lt;strong&gt;operate in integrated pixel radiance&lt;/strong&gt;.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;During rendering, they store a 18-dim feature $\mathbf{r}_{xyst}$ for each sample.
+    &lt;ul&gt;
+      &lt;li&gt;(x,y) : pixel coordinates&lt;/li&gt;
+      &lt;li&gt;s : sample indices within a pixel&lt;/li&gt;
+      &lt;li&gt;t : frame indices&lt;/li&gt;
+      &lt;li&gt;contents :
+        &lt;ul&gt;
+          &lt;li&gt;&lt;strong&gt;Radiance&lt;/strong&gt;(split into diffuse and specular components)&lt;/li&gt;
+          &lt;li&gt;&lt;strong&gt;Geometric features&lt;/strong&gt;(normal[3], depth[1])&lt;/li&gt;
+          &lt;li&gt;&lt;strong&gt;Material information&lt;/strong&gt;(roughness[1], albedo[3])&lt;/li&gt;
+          &lt;li&gt;&lt;strong&gt;Binary variables&lt;/strong&gt; :
+            &lt;ul&gt;
+              &lt;li&gt;&lt;strong&gt;emissive&lt;/strong&gt; — indicates whether the path sampled hits emissive surface&lt;/li&gt;
+              &lt;li&gt;&lt;strong&gt;metallic&lt;/strong&gt; — differentiates between dielectric and conductors&lt;/li&gt;
+              &lt;li&gt;&lt;strong&gt;transmissive&lt;/strong&gt; — distinguishes between reflections and refractions&lt;/li&gt;
+              &lt;li&gt;&lt;strong&gt;specular-bounce&lt;/strong&gt; — which is ‘true’ if first vertex on the camera path is a specular interaction&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;mapping-samples-to-per-pixel-features&quot;&gt;Mapping samples to per-pixel features&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;In this paper, they embed samples using a shallow FCN(uses leaky ReLU), then reduce the embeddings to per-pixel by averaging over the sample dimension&lt;/li&gt;
+&lt;/ul&gt;
+
+\[\mathbf{e}_{xyt} = \frac{1}{S} \sum_{s=1}^S FC(\mathbf{r}_{xyst})\]
+
+&lt;h3 id=&quot;spatio-temporal-feature-propagation&quot;&gt;Spatio-temporal feature propagation&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The per-pixel embeddings are processed using a lightweight U-net.&lt;/li&gt;
+  &lt;li&gt;Both current and previous frames are fed to the network.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Output of the UNet is given by : 
+\((\mathbf{f}^k_{xyt}, a^k_{xyt}, c^k_{xyt}), b^k_{xyt}, \lambda^k_{xyt} = UNet(\mathbf{e}_{xyt}, \mathcal{W}_t\mathbf{\bar{e}}_{xy,t-1})\)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Spatial kernels are computed by calculating distances between affinity features $\mathbf{f}^k_{xyt}$, scaled by the bandwidth parameters $a^k_{xyt}$.&lt;/li&gt;
+  &lt;li&gt;$c^k_{xyt}$ is the center weight of the kernel.&lt;/li&gt;
+  &lt;li&gt;$b^k_{xyt}$ is a bandwidth parameter modulating the feature affinity between successive frames in a temporal kernel.&lt;/li&gt;
+  &lt;li&gt;$\lambda^k_{xyt}$ is the parameter of an exponential moving average filter that accumulates the pixel embeddings and noisy radiance temporally.&lt;/li&gt;
+  &lt;li&gt;$\mathcal{W}_t$ is a warping operator that reprojects frame t-1 to frame t with nearest neighbor interpolation using the geometric flow at the primary intersection point computed by the path tracer.&lt;/li&gt;
+  &lt;li&gt;$\mathbf{\bar{e}}_{xy,t-1}$ is a temporal accumulation of the pixel embeddings defined by : 
+\(\begin{cases}
+\mathbf{\bar{e}}_{xy0} = \mathbf{e}_{xy0}, \\
+\mathbf{\bar{e}}_{xyt} = (1-\lambda_{xyt})\mathbf{e}_{xyt} + \lambda_{xyt}\mathcal{W}_t\mathbf{\bar{e}}_{xy,t-1}.
+\end{cases}\)
+    &lt;ul&gt;
+      &lt;li&gt;This helps make temporally consistent predictions, compared to simply passing the previous frame’s embeddings&lt;/li&gt;
+      &lt;li&gt;By setting $\lambda_{xyt}$ to 0 the warped embeddings can be removed, if they are inaccurate.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;spatial-kernels-from-pairwise-affinity&quot;&gt;Spatial kernels from pairwise affinity&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;The weight of the spatial filtering kernel is defined as below :&lt;/li&gt;
+&lt;/ul&gt;
+
+\[w^k_{xyuvt} = 
+\begin{cases}
+c^k_{xyt} &amp;amp; \mbox{if } x = u \mbox{ and } y = v, \\
+exp(-a^k_{xyt}\lVert\mathbf{f}^k_{xyt} - \mathbf{f}^k_{uvt}\rVert^2_2) &amp;amp; otherwise.
+\end{cases}\]
+
+&lt;ul&gt;
+  &lt;li&gt;Setting $c^k_{xyt} = 1$ makes the center pixel &lt;strong&gt;contribute fully to the output&lt;/strong&gt;, and setting $c^k_{xyt} = 0$ makes the network to &lt;strong&gt;suppress the bright outliers&lt;/strong&gt;.
+    &lt;ul&gt;
+      &lt;li&gt;These &lt;strong&gt;bright outliers&lt;/strong&gt; often appear in &lt;strong&gt;low-sample renderings when high-energy, low-probability paths are sampled&lt;/strong&gt;.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;temporally-stable-kernel-based-denoising&quot;&gt;Temporally-stable kernel-based denoising&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Prior to filtering, the noisy radiance $\mathbf{L}_{xyt}$ is accumulated over time.
+    &lt;ul&gt;
+      &lt;li&gt;This improves overall temporal stability : 
+  \(\begin{cases}
+  \mathbf{\bar{L}}_{xy0} = \mathbf{L}_{xy0}, \\
+  \mathbf{\bar{L}}_{xyt} = (1-\lambda_{xyt})\mathbf{L}_{xyt} + \lambda_{xyt}\mathcal{W}_t\mathbf{\bar{L}}_{xyt}.
+  \end{cases}\)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;The first $K - 1$ kernels are sequentially applied as following where $\mathbf{L} ^{(0)} _{xyt} = \mathbf{\bar{L}} _{xyt}$ :&lt;/li&gt;
+&lt;/ul&gt;
+
+\[\mathbf{L}^{(k)}_{xyt} = 
+\frac{\sum_{u,v}w^k_{xyuv}\mathbf{L}^{(k-1)}_{uvt}}
+    {\epsilon + \sum_{u,v}w^k_{xyuv}}\]
+
+&lt;ul&gt;
+  &lt;li&gt;Then a temporal kernel is obtained.
+    &lt;ul&gt;
+      &lt;li&gt;This kernel measures the affinity between the features of the current and previous frame(after warping).&lt;/li&gt;
+      &lt;li&gt;The equation is as following : 
+  \(\omega_{xyuvt} = exp(-b_{xyt} \lVert\mathbf{f}^K_{xyt} - \mathcal{W}_t\mathbf{f}^K_{uv,t-1}\rVert^2_2)\)&lt;/li&gt;
+      &lt;li&gt;$w^k_{xyuvt}$ are the spatial kernels, and $\omega_{xyuvt}$ is the temporal kernel.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;The final denoised image is obtained using the temporal kernel and the last spatial kernel :&lt;/li&gt;
+&lt;/ul&gt;
+
+\[\mathbf{O}_{xyt} = 
+\frac
+    {\sum_{u,v} w^K_{xyuv}\mathbf{L}^{(K-1)}_{uvt} + 
+        \sum_{u^{&apos;},v^{&apos;}}\omega_{xyu^{&apos;}v^{&apos;}}\mathcal{W}_t \mathbf{O}_{u^{&apos;}v^{&apos;},t-1}}
+    {\epsilon + \sum_{u,v}w^K_{xyuv} + \sum_{u^{&apos;},v^{&apos;}}\omega_{xyu^{&apos;}v^{&apos;}}}\]
+
+&lt;h3 id=&quot;comparison-to-kernel-predicting-networks&quot;&gt;Comparison to kernel-predicting networks&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Kernel-predicting methods require deeper and larger networks to fully benefit from larger kernels.
+    &lt;ul&gt;
+      &lt;li&gt;The number of complexity of &lt;strong&gt;pairwise interactions&lt;/strong&gt; between pixels &lt;strong&gt;increases with kernel size&lt;/strong&gt;.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;This method does not require this because the per-pixel features are predicted with a &lt;strong&gt;closed-form affinity&lt;/strong&gt;, rather than full-rank kernels.&lt;/li&gt;
+  &lt;li&gt;Also, kernel size can be dynamically changed at runtime, without retraining.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;relation-to-the-neural-bilateral-gridmeng-et-al-2020&quot;&gt;Relation to the neural bilateral grid(Meng et al. 2020)&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Meng et al.[2020] used a bilateral grid [Gharbi et al.2017] for denoising, approximating a bilateral filter.&lt;/li&gt;
+  &lt;li&gt;They used a 3D grid
+    &lt;ul&gt;
+      &lt;li&gt;2D screen-space coordinates&lt;/li&gt;
+      &lt;li&gt;A learned scalar parameter which would correspond to the range filter in a traditional bilateral filter [Tomasi and Manduchi
+1998]&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;This is similar to using feature vector with dimension 1 (in this paper they used 8), and they say this leads to oversmoothing.&lt;/li&gt;
+&lt;/ul&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>saha</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="paper-review" />
+      
+
+      
+        <summary type="html">introduction</summary>
+      
+
+      
+      
+    </entry>
   
     <entry>
       <title type="html">Moving in a 360 World : Synthesizing Panoramic Parallaxes from a Single Panorama(OmniNeRF)</title>

@@ -11,7 +11,7 @@
 
 
 
-    <title>Object-Centric Learning with Slot Attention</title>
+    <title>Interactive Monte Carlo Denoising using Affinity of Neural Features</title>
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Styles'n'Scripts -->
@@ -40,7 +40,7 @@
     <!-- This tag outputs SEO meta+structured data and other important settings -->
     <meta name="description" content="" />
     <link rel="shortcut icon" href="http://localhost:4000/assets/images/favicon.png" type="image/png" />
-    <link rel="canonical" href="http://localhost:4000/OCLSA" />
+    <link rel="canonical" href="http://localhost:4000/AffinityMC" />
     <meta name="referrer" content="no-referrer-when-downgrade" />
 
      <!--title below is coming from _includes/dynamic_title-->
@@ -71,20 +71,20 @@
     
     <meta property="og:site_name" content="Saha's Blog" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Object-Centric Learning with Slot Attention" />
-    <meta property="og:description" content="Introduction Object-centric representations have the potential to improve sample efficiency and generalization of machine learning algorithms across a range of application domains. However, obtaining object-centric representations from raw perceptual input, such as an image or a video, is challenging and often requires either supervision or task-specific architectures. To overcome this" />
-    <meta property="og:url" content="http://localhost:4000/OCLSA" />
-    <meta property="og:image" content="http://localhost:4000/../assets/images/OCLSA_1.png" />
+    <meta property="og:title" content="Interactive Monte Carlo Denoising using Affinity of Neural Features" />
+    <meta property="og:description" content="introduction Limitations of previous work State of art MC denoisers use large kernel-predicting neural networks (Bako et al. 2017, Gharbi et al. 2019, Kettunen et al. 2019, Vogels et al. 2018, Xu et al. 2019), which have large computational cost for interactive applications. Faster denoisers using hand-designed filters(Mara et al." />
+    <meta property="og:url" content="http://localhost:4000/AffinityMC" />
+    <meta property="og:image" content="http://localhost:4000/../assets/images/AffinityMC_cover.png" />
     <meta property="article:publisher" content="https://www.facebook.com/false" />
     <meta property="article:author" content="https://www.facebook.com/false" />
-    <meta property="article:published_time" content="2022-01-17T10:50:00+09:00" />
-    <meta property="article:modified_time" content="2022-01-17T10:50:00+09:00" />
+    <meta property="article:published_time" content="2022-04-07T00:00:00+09:00" />
+    <meta property="article:modified_time" content="2022-04-07T00:00:00+09:00" />
     <meta property="article:tag" content="Paper-review" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Object-Centric Learning with Slot Attention" />
-    <meta name="twitter:description" content="Introduction Object-centric representations have the potential to improve sample efficiency and generalization of machine learning algorithms across a range of application domains. However, obtaining object-centric representations from raw perceptual input, such as an image or a video, is challenging and often requires either supervision or task-specific architectures. To overcome this" />
+    <meta name="twitter:title" content="Interactive Monte Carlo Denoising using Affinity of Neural Features" />
+    <meta name="twitter:description" content="introduction Limitations of previous work State of art MC denoisers use large kernel-predicting neural networks (Bako et al. 2017, Gharbi et al. 2019, Kettunen et al. 2019, Vogels et al. 2018, Xu et al. 2019), which have large computational cost for interactive applications. Faster denoisers using hand-designed filters(Mara et al." />
     <meta name="twitter:url" content="http://localhost:4000/" />
-    <meta name="twitter:image" content="http://localhost:4000/../assets/images/OCLSA_1.png" />
+    <meta name="twitter:image" content="http://localhost:4000/../assets/images/AffinityMC_cover.png" />
     <meta name="twitter:label1" content="Written by" />
     <meta name="twitter:data1" content="Saha's Blog" />
     <meta name="twitter:label2" content="Filed under" />
@@ -103,18 +103,18 @@
         "name": "Saha's Blog",
         "logo": "http://localhost:4000/false"
     },
-    "url": "http://localhost:4000/OCLSA",
+    "url": "http://localhost:4000/AffinityMC",
     "image": {
         "@type": "ImageObject",
-        "url": "http://localhost:4000/../assets/images/OCLSA_1.png",
+        "url": "http://localhost:4000/../assets/images/AffinityMC_cover.png",
         "width": 2000,
         "height": 666
     },
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "http://localhost:4000/OCLSA"
+        "@id": "http://localhost:4000/AffinityMC"
     },
-    "description": "Introduction Object-centric representations have the potential to improve sample efficiency and generalization of machine learning algorithms across a range of application domains. However, obtaining object-centric representations from raw perceptual input, such as an image or a video, is challenging and often requires either supervision or task-specific architectures. To overcome this"
+    "description": "introduction Limitations of previous work State of art MC denoisers use large kernel-predicting neural networks (Bako et al. 2017, Gharbi et al. 2019, Kettunen et al. 2019, Vogels et al. 2018, Xu et al. 2019), which have large computational cost for interactive applications. Faster denoisers using hand-designed filters(Mara et al."
 }
     </script>
 
@@ -127,7 +127,7 @@
     </script> -->
 
     <meta name="generator" content="Jekyll 3.6.2" />
-    <link rel="alternate" type="application/rss+xml" title="Object-Centric Learning with Slot Attention" href="/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="Interactive Monte Carlo Denoising using Affinity of Neural Features" href="/feed.xml" />
 
     
         <script type="text/x-mathjax-config">
@@ -209,7 +209,7 @@ into the {body} of the default.hbs template -->
 
             <header class="post-full-header">
                 <section class="post-full-meta">
-                    <!-- <time class="post-full-meta-date" datetime="17 January 2022">17 January 2022</time> -->
+                    <!-- <time class="post-full-meta-date" datetime=" 7 April 2022"> 7 April 2022</time> -->
                     
                         <!-- <span class="date-divider">/</span> -->
                         
@@ -219,58 +219,185 @@ into the {body} of the default.hbs template -->
                         
                     
                 </section>
-                <h1 class="post-full-title">Object-Centric Learning with Slot Attention</h1>
+                <h1 class="post-full-title">Interactive Monte Carlo Denoising using Affinity of Neural Features</h1>
             </header>
 
             
 
             <section class="post-full-content">
                 <div class="kg-card-markdown">
-                    <h1 id="introduction">Introduction</h1>
+                    <h1 id="introduction">introduction</h1>
+
+<h3 id="limitations-of-previous-work">Limitations of previous work</h3>
 <ul>
-  <li>Object-centric representations have the potential to improve sample efficiency and generalization of machine learning algorithms across a range of application domains.</li>
-  <li>However, obtaining object-centric representations from raw perceptual input, such as an image or a video, is challenging and often requires either supervision or task-specific architectures.</li>
-  <li>To overcome this challenge, this paper introduce the Slot Attention module, a differentiable interface between perceptual representations (e.g., the output of a CNN) and a set of variables called slots.</li>
+  <li>State of art MC denoisers use <strong>large kernel-predicting neural networks</strong> (Bako et al. 2017, Gharbi et al. 2019, Kettunen et al. 2019, Vogels et al. 2018, Xu et al. 2019), which have <strong>large computational cost</strong> for interactive applications.</li>
+  <li><strong>Faster denoisers</strong> using hand-designed filters(Mara et al. 2017), or a compact neural network(Chaitanya et al. 2017, Meng et al. 2020) <strong>sacrifices quality for performance</strong>.</li>
+  <li>Interactive denoisers have trouble in maintaining <strong>temporal stability</strong> in certain scenes like soft shadows, complex global illumination, glossy reflections, refractive materials and etc..
+    <ul>
+      <li>Denoising artifacts are often amplified in video animation(flickering), therefore temporal-stability is important.</li>
+    </ul>
+  </li>
 </ul>
 
-<h1 id="methods">Methods</h1>
-
-<h3 id="slot-attention-module">Slot Attention Module</h3>
-
+<h3 id="objective-of-this-paper">Objective of this paper</h3>
 <ul>
-  <li>Maps from a set of $N$ input feature vectors to a set of $K$ output vectors called ‘slots’.</li>
-  <li>Iterative attention mechanism is used to map the inputs to the slots: slots are initialized at random and refined at each iteration.</li>
-  <li>At each iteration, slots compete for explaining pars via softmax-based attention mechanism and update there representation using a recurrent update function.</li>
-  <li>Slot Attention uses a dot-product attention with coefficients normalized over the slots.</li>
-  <li>Overall algorithm: 
-<img src="/assets/images/OCLSA_2.png" width="100%" height="100%" /></li>
-  <li>The figure below shows how the Slot Attention is trained.</li>
-  <li>There are 4 slots, for each objects and the background.</li>
-  <li>In each iterations, the most dominant object is mapped to the slot. 
-<img src="/assets/images/OCLSA_3.png" width="100%" height="100%" /></li>
+  <li>In this paper, they propose a new denoiser for low-sample, interactive ray-tracing applications that directly operates on the path-traced samples.
+    <ul>
+      <li>A light-weight neural network that summarizes <strong>high-dimensional per-sample information</strong> into <strong>low-dimensional per-pixel feature vectors</strong>.</li>
+      <li>A novel <strong>pairwise affinity</strong> over these features, which is used to <strong>weight the contributions of neighboring per-pixel radiance values</strong> in a local weighted average filtering step.</li>
+      <li>A new temporal aggregation mechanism which uses pairwise affinity to improve temporal stability.</li>
+    </ul>
+  </li>
 </ul>
 
-<h3 id="object-discovery">Object Discovery</h3>
+<h1 id="denoising-with-learned-pairwise-affinity">Denoising with learned pairwise affinity</h1>
+
+<h3 id="overall-pipeline">Overall pipeline</h3>
+<p><img src="/assets/images/AffinityMC_1.png" width="100%" height="100%" /></p>
+
+<h3 id="input-path-traced-sample-features">Input path-traced sample features</h3>
 <ul>
-  <li>Unsupervised</li>
-  <li>The order of which object will go into which slot do not matter.</li>
-  <li>Encoder : CNN backbone augmented with positional embeddings + slot attention module</li>
-  <li>Decoder : Using spatial broadcast decoder, slot representations are broadcasted onto a 2D grid and augmented with position embeddings.</li>
+  <li><strong>Working with samples</strong> shows <strong>improved denoising</strong> compared to using pixels, but has a <strong>computational overhead</strong>.
+    <ul>
+      <li>In this paper, they addressed this problem by using <strong>per-sample information in computing weights</strong>, but the filters <strong>operate in integrated pixel radiance</strong>.</li>
+    </ul>
+  </li>
+  <li>During rendering, they store a 18-dim feature $\mathbf{r}_{xyst}$ for each sample.
+    <ul>
+      <li>(x,y) : pixel coordinates</li>
+      <li>s : sample indices within a pixel</li>
+      <li>t : frame indices</li>
+      <li>contents :
+        <ul>
+          <li><strong>Radiance</strong>(split into diffuse and specular components)</li>
+          <li><strong>Geometric features</strong>(normal[3], depth[1])</li>
+          <li><strong>Material information</strong>(roughness[1], albedo[3])</li>
+          <li><strong>Binary variables</strong> :
+            <ul>
+              <li><strong>emissive</strong> — indicates whether the path sampled hits emissive surface</li>
+              <li><strong>metallic</strong> — differentiates between dielectric and conductors</li>
+              <li><strong>transmissive</strong> — distinguishes between reflections and refractions</li>
+              <li><strong>specular-bounce</strong> — which is ‘true’ if first vertex on the camera path is a specular interaction</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
 </ul>
 
-<h3 id="set-prediction">Set Prediction</h3>
+<h3 id="mapping-samples-to-per-pixel-features">Mapping samples to per-pixel features</h3>
 <ul>
-  <li>For a set of $K$ elements, there can be $K!$ possible equivalent representations.</li>
-  <li>Encoder : Similar to object discovery</li>
-  <li>Classifier : For each slots, apply MLP with parameters shared between slots. Next, match them using the Hungarian algorithm.</li>
+  <li>In this paper, they embed samples using a shallow FCN(uses leaky ReLU), then reduce the embeddings to per-pixel by averaging over the sample dimension</li>
 </ul>
 
-<h3 id="overall-pipeline">Overall Pipeline</h3>
-<p><img src="/assets/images/OCLSA_1.png" width="100%" height="100%" /></p>
+\[\mathbf{e}_{xyt} = \frac{1}{S} \sum_{s=1}^S FC(\mathbf{r}_{xyst})\]
 
-<h1 id="results">Results</h1>
+<h3 id="spatio-temporal-feature-propagation">Spatio-temporal feature propagation</h3>
+
 <ul>
-  <li>Refer to <a href="https://arxiv.org/abs/2006.15055">original paper</a></li>
+  <li>The per-pixel embeddings are processed using a lightweight U-net.</li>
+  <li>Both current and previous frames are fed to the network.</li>
+  <li>
+    <p>Output of the UNet is given by : 
+\((\mathbf{f}^k_{xyt}, a^k_{xyt}, c^k_{xyt}), b^k_{xyt}, \lambda^k_{xyt} = UNet(\mathbf{e}_{xyt}, \mathcal{W}_t\mathbf{\bar{e}}_{xy,t-1})\)</p>
+  </li>
+  <li>Spatial kernels are computed by calculating distances between affinity features $\mathbf{f}^k_{xyt}$, scaled by the bandwidth parameters $a^k_{xyt}$.</li>
+  <li>$c^k_{xyt}$ is the center weight of the kernel.</li>
+  <li>$b^k_{xyt}$ is a bandwidth parameter modulating the feature affinity between successive frames in a temporal kernel.</li>
+  <li>$\lambda^k_{xyt}$ is the parameter of an exponential moving average filter that accumulates the pixel embeddings and noisy radiance temporally.</li>
+  <li>$\mathcal{W}_t$ is a warping operator that reprojects frame t-1 to frame t with nearest neighbor interpolation using the geometric flow at the primary intersection point computed by the path tracer.</li>
+  <li>$\mathbf{\bar{e}}_{xy,t-1}$ is a temporal accumulation of the pixel embeddings defined by : 
+\(\begin{cases}
+\mathbf{\bar{e}}_{xy0} = \mathbf{e}_{xy0}, \\
+\mathbf{\bar{e}}_{xyt} = (1-\lambda_{xyt})\mathbf{e}_{xyt} + \lambda_{xyt}\mathcal{W}_t\mathbf{\bar{e}}_{xy,t-1}.
+\end{cases}\)
+    <ul>
+      <li>This helps make temporally consistent predictions, compared to simply passing the previous frame’s embeddings</li>
+      <li>By setting $\lambda_{xyt}$ to 0 the warped embeddings can be removed, if they are inaccurate.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="spatial-kernels-from-pairwise-affinity">Spatial kernels from pairwise affinity</h3>
+<ul>
+  <li>The weight of the spatial filtering kernel is defined as below :</li>
+</ul>
+
+\[w^k_{xyuvt} = 
+\begin{cases}
+c^k_{xyt} &amp; \mbox{if } x = u \mbox{ and } y = v, \\
+exp(-a^k_{xyt}\lVert\mathbf{f}^k_{xyt} - \mathbf{f}^k_{uvt}\rVert^2_2) &amp; otherwise.
+\end{cases}\]
+
+<ul>
+  <li>Setting $c^k_{xyt} = 1$ makes the center pixel <strong>contribute fully to the output</strong>, and setting $c^k_{xyt} = 0$ makes the network to <strong>suppress the bright outliers</strong>.
+    <ul>
+      <li>These <strong>bright outliers</strong> often appear in <strong>low-sample renderings when high-energy, low-probability paths are sampled</strong>.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="temporally-stable-kernel-based-denoising">Temporally-stable kernel-based denoising</h3>
+<ul>
+  <li>Prior to filtering, the noisy radiance $\mathbf{L}_{xyt}$ is accumulated over time.
+    <ul>
+      <li>This improves overall temporal stability : 
+  \(\begin{cases}
+  \mathbf{\bar{L}}_{xy0} = \mathbf{L}_{xy0}, \\
+  \mathbf{\bar{L}}_{xyt} = (1-\lambda_{xyt})\mathbf{L}_{xyt} + \lambda_{xyt}\mathcal{W}_t\mathbf{\bar{L}}_{xyt}.
+  \end{cases}\)</li>
+    </ul>
+  </li>
+  <li>The first $K - 1$ kernels are sequentially applied as following where $\mathbf{L} ^{(0)} _{xyt} = \mathbf{\bar{L}} _{xyt}$ :</li>
+</ul>
+
+\[\mathbf{L}^{(k)}_{xyt} = 
+\frac{\sum_{u,v}w^k_{xyuv}\mathbf{L}^{(k-1)}_{uvt}}
+    {\epsilon + \sum_{u,v}w^k_{xyuv}}\]
+
+<ul>
+  <li>Then a temporal kernel is obtained.
+    <ul>
+      <li>This kernel measures the affinity between the features of the current and previous frame(after warping).</li>
+      <li>The equation is as following : 
+  \(\omega_{xyuvt} = exp(-b_{xyt} \lVert\mathbf{f}^K_{xyt} - \mathcal{W}_t\mathbf{f}^K_{uv,t-1}\rVert^2_2)\)</li>
+      <li>$w^k_{xyuvt}$ are the spatial kernels, and $\omega_{xyuvt}$ is the temporal kernel.</li>
+    </ul>
+  </li>
+  <li>The final denoised image is obtained using the temporal kernel and the last spatial kernel :</li>
+</ul>
+
+\[\mathbf{O}_{xyt} = 
+\frac
+    {\sum_{u,v} w^K_{xyuv}\mathbf{L}^{(K-1)}_{uvt} + 
+        \sum_{u^{'},v^{'}}\omega_{xyu^{'}v^{'}}\mathcal{W}_t \mathbf{O}_{u^{'}v^{'},t-1}}
+    {\epsilon + \sum_{u,v}w^K_{xyuv} + \sum_{u^{'},v^{'}}\omega_{xyu^{'}v^{'}}}\]
+
+<h3 id="comparison-to-kernel-predicting-networks">Comparison to kernel-predicting networks</h3>
+
+<ul>
+  <li>Kernel-predicting methods require deeper and larger networks to fully benefit from larger kernels.
+    <ul>
+      <li>The number of complexity of <strong>pairwise interactions</strong> between pixels <strong>increases with kernel size</strong>.</li>
+    </ul>
+  </li>
+  <li>This method does not require this because the per-pixel features are predicted with a <strong>closed-form affinity</strong>, rather than full-rank kernels.</li>
+  <li>Also, kernel size can be dynamically changed at runtime, without retraining.</li>
+</ul>
+
+<h3 id="relation-to-the-neural-bilateral-gridmeng-et-al-2020">Relation to the neural bilateral grid(Meng et al. 2020)</h3>
+
+<ul>
+  <li>Meng et al.[2020] used a bilateral grid [Gharbi et al.2017] for denoising, approximating a bilateral filter.</li>
+  <li>They used a 3D grid
+    <ul>
+      <li>2D screen-space coordinates</li>
+      <li>A learned scalar parameter which would correspond to the range filter in a traditional bilateral filter [Tomasi and Manduchi
+1998]</li>
+    </ul>
+  </li>
+  <li>This is similar to using feature vector with dimension 1 (in this paper they used 8), and they say this leads to oversmoothing.</li>
 </ul>
 
                 </div>
@@ -354,11 +481,6 @@ into the {body} of the default.hbs template -->
                                 
                                   
                                     
-                                        
-                                        
-                                            <li><a href="/AffinityMC">Interactive Monte Carlo Denoising using Affinity of Neural Features</a></li>
-                                        
-                                    
                                   
                                 
                                   
@@ -382,6 +504,11 @@ into the {body} of the default.hbs template -->
                                   
                                 
                                   
+                                    
+                                        
+                                        
+                                            <li><a href="/OCLSA">Object-Centric Learning with Slot Attention</a></li>
+                                        
                                     
                                   
                                 
@@ -416,53 +543,6 @@ into the {body} of the default.hbs template -->
 
             <!-- If there's a next post, display it using the same markup included from - partials/post-card.hbs -->
             
-                
-
-    <article class="post-card post-template">
-        
-            <a class="post-card-image-link" href="/uORF">
-                <div class="post-card-image" style="background-image: url(/../assets/images/uORF_cover.png)"></div>
-            </a>
-        
-        <div class="post-card-content">
-            <a class="post-card-content-link" href="/uORF">
-                <header class="post-card-header">
-                    
-                        
-                            
-                                <span class="post-card-tags">Paper-review</span>
-                            
-                        
-                    
-
-                    <h2 class="post-card-title">Unsupervised Discovery of Object Radiance Fields</h2>
-                </header>
-                <section class="post-card-excerpt">
-                    
-                        <p>Introduction Object-centric representation is a constant topic of interest in computer vision and machine learning. Such representation should bear three characteristics: Should be learned in a unsupervised manner. Should explain the image formation</p>
-                    
-                </section>
-            </a>
-            <footer class="post-card-meta">
-                
-                    
-                        
-                        <span class="post-card-author">
-                            <a href="/author/saha/">saha</a>
-                        </span>
-                    
-                
-                <span class="reading-time">
-                    
-                    
-                      2 min read
-                    
-                </span>
-            </footer>
-        </div>
-    </article>
-
-            
 
             <!-- If there's a previous post, display it using the same markup included from - partials/post-card.hbs -->
             
@@ -471,21 +551,23 @@ into the {body} of the default.hbs template -->
     <article class="post-card post-template no-image">
         
         <div class="post-card-content">
-            <a class="post-card-content-link" href="/post1">
+            <a class="post-card-content-link" href="/fn">
                 <header class="post-card-header">
                     
                         
                             
-                                <span class="post-card-tags">Blog</span>
+                                <span class="post-card-tags">Coding</span>
                             
                         
                     
 
-                    <h2 class="post-card-title">깃헙 블로그에 코드 넣기</h2>
+                    <h2 class="post-card-title">코딩용 함수들 정리</h2>
                 </header>
                 <section class="post-card-excerpt">
                     
-                        <p>Code block 사용 깃허브 블로그에 코드를 넣을 때 code block이라는 것을 활용할 수 있다. ```py def sum(a, b): return a+b ``` 이런 식으로 입력을 하면 실제로 아래와 같은 모습으로 변환된다. def sum(a, b):</p>
+                        <p>Python
+
+</p>
                     
                 </section>
             </a>
@@ -523,18 +605,18 @@ into the {body} of the default.hbs template -->
         </a>
     </div>
     <span class="floating-header-divider">&mdash;</span>
-    <div class="floating-header-title">Object-Centric Learning with Slot Attention</div>
+    <div class="floating-header-title">Interactive Monte Carlo Denoising using Affinity of Neural Features</div>
     <div class="floating-header-share">
         <div class="floating-header-share-label">Share this <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
     <path d="M7.5 15.5V4a1.5 1.5 0 1 1 3 0v4.5h2a1 1 0 0 1 1 1h2a1 1 0 0 1 1 1H18a1.5 1.5 0 0 1 1.5 1.5v3.099c0 .929-.13 1.854-.385 2.748L17.5 23.5h-9c-1.5-2-5.417-8.673-5.417-8.673a1.2 1.2 0 0 1 1.76-1.605L7.5 15.5zm6-6v2m-3-3.5v3.5m6-1v2"/>
 </svg>
 </div>
-        <a class="floating-header-share-tw" href="https://twitter.com/share?text=Object-Centric+Learning+with+Slot+Attention&amp;url=https://ee12ha0220.github.io/jasper2OCLSA"
+        <a class="floating-header-share-tw" href="https://twitter.com/share?text=Interactive+Monte+Carlo+Denoising+using+Affinity+of+Neural+Features&amp;url=https://ee12ha0220.github.io/jasper2AffinityMC"
             onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
 
         </a>
-        <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://ee12ha0220.github.io/jasper2OCLSA"
+        <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://ee12ha0220.github.io/jasper2AffinityMC"
             onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
 

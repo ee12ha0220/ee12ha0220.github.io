@@ -8,6 +8,21 @@
     
       
       <item>
+        <title>Interactive Monte Carlo Denoising using Affinity of Neural Features</title>
+        
+          <description>&lt;h1 id=&quot;introduction&quot;&gt;introduction&lt;/h1&gt;
+
+</description>
+        
+        <pubDate>Thu, 07 Apr 2022 00:00:00 +0900</pubDate>
+        <link>
+        http://localhost:4000/AffinityMC</link>
+        <guid isPermaLink="true">http://localhost:4000/AffinityMC</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>코딩용 함수들 정리</title>
         
           <description>&lt;h1 id=&quot;python&quot;&gt;Python&lt;/h1&gt;
@@ -116,6 +131,7 @@
 &lt;p&gt;&lt;a href=&quot;https://gist.github.com&quot;&gt;Github Gist&lt;/a&gt;는 Github과 다르게 원하는 code snippet만 업로드 할 수 있다. 업로드를 완료하면 링크를 복사할 수 있는데, 이를 그대로 붙여넣으면 code block을 아래와 같이 삽입할 수 있다. 
 &lt;script src=&quot;https://gist.github.com/ee12ha0220/cc54fd72c29671fe767d6c8206a2a312.js&quot;&gt;&lt;/script&gt;
 나는 이 방법이 위보다 마음에 들어서 사용하고 있지만, 각자 사용하는 테마와 취향에 맞게 사용하면 될 것 같다.&lt;/p&gt;
+
 </description>
         
         <pubDate>Sat, 15 Jan 2022 16:00:00 +0900</pubDate>
