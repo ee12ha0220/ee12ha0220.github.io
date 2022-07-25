@@ -1,8 +1,9 @@
 ---
 title: Interactive Monte Carlo Denoising using Affinity of Neural Features
-cover: ../assets/images/AffinityMC_cover.png
+# cover: ../assets/images/AffinityMC_cover.png
 date: '2022-04-07'
 tags: [paper-review]
+author: saha
 math: true # do not change
 mermaid: true
 pin : false
