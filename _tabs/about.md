@@ -4,5 +4,13 @@ icon: fas fa-info-circle
 order: 4
 ---
 
-> Add Markdown syntax content to file `_tabs/about.md`{: .filepath } and it will show up on this page.
-{: .prompt-tip }
+<!-- > Add Markdown syntax content to file `_tabs/about.md`{: .filepath } and it will show up on this page.
+{: .prompt-tip } -->
+
+## 블로그를 시작하게 된 계기?
+
+약간의 tmi를 말하자면.. 공부하는 과정에서 정리할 공간이 필요해 notion을 활용하고 있었는데, 어느 순간 notion의 맞춤법 검사 기능이 사라져버렸다. 처음에는 그냥 그런가보다 하고 사용했지만, 자잘한 맞춤법 실수(특히 영어)가 계속 생기는것이 너무너무 불편해서 다른 대안을 찾아야겠다고 생각을 하게 되었다. 뭔가 github blog가 내 맘대로 꾸미는 것도 가능하고, 요즘 조금 유행(?)하는거같아서 나도 한번 해봐야겠다 하는 마음에서 시작해게 되었다. 
+
+## 블로그의 목적이 뭔가요?
+
+사실 처음 계획은 '내가 공부한 것들을 이 지식이 필요한 다양한 사람들이 보기 쉽도록 예쁘게 정리해보자!' 라는 느낌이었지만.. 예쁘게 정리하는 것이 상상 이상으로 번거롭고 시간이 많이 든다는 것을 알아버렸다. 그래서 그냥 나 자신이 공부한 것들을 나중에 다시 보고 리마인드 할 수 있도록 구체적인 내용보다는 아이디어 중심으로 글들을 작성하게 되었다. 
